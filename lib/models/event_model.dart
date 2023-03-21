@@ -71,6 +71,7 @@ class Event {
     String? location,
     double? earning,
     PatientRecord? patientRecord,
+    Elder? elder,
   }) =>
       Event(
         id: id ?? this.id,
@@ -82,6 +83,7 @@ class Event {
         location: location ?? this.location,
         earning: earning ?? this.earning,
         patientRecord: patientRecord ?? this.patientRecord,
+        elder: elder ?? this.elder,
       );
 
   @override
