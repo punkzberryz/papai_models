@@ -29,7 +29,7 @@ class Event {
 
   factory Event.fromJson(Map<String, dynamic> json) {
     final event = Event(
-        id: json['_id'] as String,
+        id: json['id'] as String,
         dateStart: DateTime.parse(json['dateStart']),
         dateEnd: DateTime.parse(json['dateEnd']),
         status: _stringToEventStatus(json['status']),
@@ -46,7 +46,7 @@ class Event {
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {
-      '_id': id,
+      'id': id,
       'dateStart': dateStart.toString(),
       'dateEnd': dateEnd.toString(),
       'status': status.name,

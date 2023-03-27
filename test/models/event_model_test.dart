@@ -6,7 +6,7 @@ import 'package:papai_models/models/patient_record_model.dart';
 void main() {
   final DateTime today = DateTime.now();
   final Map<String, dynamic> jsonEvent = {
-    '_id': 'firstID',
+    'id': 'firstID',
     'dateStart': today.toString(),
     'dateEnd':
         DateTime(today.year, today.month, today.day, today.hour + 3).toString(),
@@ -19,7 +19,7 @@ void main() {
 
   final event = Event.fromJson(jsonEvent);
   test('event model fromJson method ...', () {
-    expect(event.id, jsonEvent['_id']);
+    expect(event.id, jsonEvent['id']);
     expect(event.carerId, jsonEvent['carerId']);
     expect(event.elderId, jsonEvent['elderId']);
     expect(event.location, jsonEvent['location']);
@@ -83,7 +83,7 @@ void main() {
   test('event with drugUsage toJson', () {
     final newEvent = event.copyWith(patientRecord: elderRecord2);
     final newJson = newEvent.toJson();
-    expect(newJson['_id'], jsonEvent['_id']);
+    expect(newJson['id'], jsonEvent['id']);
     expect(newJson['patientRecord'], elderRecord2.toJson());
   });
   test('event with drugUsage toJson and back fromJson', () {
